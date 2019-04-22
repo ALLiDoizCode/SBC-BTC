@@ -1,9 +1,8 @@
-# SBC-BTC
 <p align="center">
  <a href="https://www.secureblockchains.com/"><img src="https://github.com/SecureBlockChains/Assets/blob/master/Anchor.png" title="SBC" alt="SBC"></a>
 </p>
 
-# SBC-ETH
+# SBC-BTC
 
 > A Node.js Library for BTC
 
