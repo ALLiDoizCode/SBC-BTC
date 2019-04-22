@@ -1,22 +1,23 @@
 const bitcoin = require('bitcoinjs-lib');
+const util = require('./Helpers/Utility');
 
-let testnet = bitcoin.networks.testnet;
+function payment(prevTxHash, transactionCount, destination, amount, WIF) {
+    let txb = new bitcoin.TransactionBuilder()
+    let hash = prevTxHash
+    let ountn = transactionCount;
 
-let txb = new bitcoin.TransactionBuilder(testnet)
+    //input
+    txb.addInput(hash, ountn)
 
-let txId = ""
-let ountn = 0;
+    //output
+    txb.addOutput(destination, util.toSatoshi(amount))
 
-//input
-txb.addInput(txId,ountn)
+    let keyPair = bitcoin.ECPair.fromWIF(WIF)
 
-//output
-txb.addOutput("destination","amount in satoshi")
+    txb.sign(0, keyPair)
 
-let WIF = "Secret"
+    let tx = txb.build().toHex()
 
-let keyPair = bitcoin.ECPair.fromWIF(WIF,testnet)
+    return tx
 
-txb.sign(0,keyPair)
-
-let tx = txb.build().toHex()
+}
