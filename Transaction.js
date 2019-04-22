@@ -1,7 +1,9 @@
 const bitcoin = require('bitcoinjs-lib');
 const util = require('./Helpers/Utility');
 
-function payment(prevTxHash, transactionCount, destination, amount, WIF) {
+var exports = module.exports = {};
+
+var payment = function (prevTxHash, transactionCount, destination, amount, WIF) {
     let txb = new bitcoin.TransactionBuilder()
     let hash = prevTxHash
     let ountn = transactionCount;
@@ -21,3 +23,5 @@ function payment(prevTxHash, transactionCount, destination, amount, WIF) {
     return tx
 
 }
+
+exports.payment = payment
