@@ -4,8 +4,8 @@ const client = require('./Client');
 
 var exports = module.exports = {};
 
-exports.submit = function (callback, blob) {
-    client.send(callback, client.router.submit, blob)
+exports.submit = function (callback, tx) {
+    client.send(callback, client.router.submit, tx)
 }
 
 exports.accountInfo = function (callback, address) {
