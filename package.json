@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bitcore-insight": "^1.0.1"
+    "bitcoinjs-lib": "^5.0.2"
   }
 }
