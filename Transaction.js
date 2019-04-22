@@ -1,5 +1,5 @@
 const bitcoin = require('bitcoinjs-lib');
-const util = require('./Helpers/Utility');
+const util = require('./Utility');
 
 var exports = module.exports = {};
 

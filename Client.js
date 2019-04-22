@@ -13,7 +13,7 @@ var router =
         method:"POST",
         server:SERVER
     },
-    balance:{
+    accountInfo:{
         endpoint:"addrs/",
         method:"GET",
         server:DATA_SERVER
